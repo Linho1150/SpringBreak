@@ -1,4 +1,4 @@
-package com.anselmo.springbreak.helloworld.entity;
+package com.anselmo.springbreak.sub.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,18 +9,16 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class HelloWorldEntity {
-
+public class SubAnswerEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(length = 200)
-    private String subject;
-
     @Column(columnDefinition = "TEXT")
-    private String content;
+    private String context;
 
     private LocalDateTime createDate;
 
+    @ManyToOne
+    private SubQuestionEntity question;
 }

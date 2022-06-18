@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/hello")
 public class HelloworldController {
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String getHello(){
         System.out.println("Hello");
@@ -24,17 +24,17 @@ public class HelloworldController {
         result.append(helloDtoCon.getFianlStr());
         return result.toString();
     }
-    @RequestMapping(value = "/",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public String getPost(){
         return "Post Mapping";
     }
-    @RequestMapping(value = "/",method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
     public String getPut(){
         return "Put Mapping";
     }
-    @RequestMapping(value = "/",method = RequestMethod.DELETE)
+    @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     public String getDelete(){
         return "Delete Mapping";
