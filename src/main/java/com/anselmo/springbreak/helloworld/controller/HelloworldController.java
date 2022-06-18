@@ -14,6 +14,7 @@ public class HelloworldController {
     @RequestMapping(value = "/",method = RequestMethod.GET)
     @ResponseBody
     public String getHello(){
+        System.out.println("Hello");
         StringBuilder result = new StringBuilder();
         HelloworldDTO helloDto=new HelloworldDTO();
         helloDto.setHello("Get Mapping with Dto");
