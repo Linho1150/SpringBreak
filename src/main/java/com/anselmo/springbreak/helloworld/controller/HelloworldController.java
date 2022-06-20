@@ -3,12 +3,12 @@ package com.anselmo.springbreak.helloworld.controller;
 import com.anselmo.springbreak.helloworld.dto.HelloworldDTO;
 import com.anselmo.springbreak.helloworld.dto.HelloworldDtoConstructor;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/hello")
 public class HelloworldController {
     @RequestMapping(method = RequestMethod.GET)
