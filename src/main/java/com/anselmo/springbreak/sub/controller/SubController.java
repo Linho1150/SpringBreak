@@ -2,6 +2,7 @@ package com.anselmo.springbreak.sub.controller;
 
 import com.anselmo.springbreak.sub.entity.SubQuestionEntity;
 import com.anselmo.springbreak.sub.repository.QuestionRepository;
+import com.anselmo.springbreak.sub.service.SubService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequestMapping("/sub")
 public class SubController {
 
-    private final QuestionRepository questionRepository;
+    private final SubService subService;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
@@ -26,8 +27,9 @@ public class SubController {
 
     @RequestMapping(value = "/question/list",method = RequestMethod.GET)
     public String questionList(Model model){
-        List<SubQuestionEntity> subQuestionEntityList = this.questionRepository.findAll();
+        List<SubQuestionEntity> subQuestionEntityList = this.subService.getList();
         model.addAttribute("questionList",subQuestionEntityList);
         return "question_list";
+
     }
 }
